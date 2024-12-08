@@ -11,3 +11,9 @@ export interface Route {
         request?: unknown;
     }
 }
+
+export interface ResponseProperties {
+    status: { type: 'string' };
+    message: { type: 'string' };
+    data?: any;
+}
