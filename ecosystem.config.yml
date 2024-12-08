@@ -1,0 +1,10 @@
+# arquivo de configuração do pm2 para rodar o projeto
+apps:
+  - name: "teddy-backend-app"
+    script: "./build/server.js" # path 
+    instances: 1                # aumentar conforme escalabilitade
+    exec_mode: fork             # form ou cluster
+    autorestart: true
+    watch: false
+    env:
+      NODE_ENV: "production"
