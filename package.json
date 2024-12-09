@@ -13,7 +13,7 @@
     "start": "export default NODE_ENV=production && node build/server.js",
     "dev": "export default NODE_ENV=development && nodemon src/server.ts",
     "lint": "npx eslint . --fix",
-    "prisma": "npx prisma db push"
+    "prisma": "npx prisma generate && npx prisma db push"
   },
   "keywords": [],
   "_moduleAliases": {
@@ -66,5 +66,8 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.17.0"
+  },
+  "engines": {
+    "node": "22.0.0"
   }
 }
