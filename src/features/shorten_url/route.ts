@@ -1,9 +1,15 @@
 import { handler } from './index'
+
+// types
 import { ResponseProperties, Route } from '@globalTypes/global'
+
+// features
+import { urlShortenedBy } from '@features/middlewares/urlShortenedBy';
 
 export default {
     method: 'POST',
     url: '/v1/shorten-url',
+    preHandler: urlShortenedBy,
     handler,
     schema: {
         body: {
@@ -21,7 +27,8 @@ export default {
                     data: {
                         type: 'object',
                         properties: {
-                            shortenedUrl: { type: 'string' }
+                            shortenedUrl: { type: 'string' },
+                            originalUrl: { type: 'string' }
                         }
                     },
                 } as ResponseProperties

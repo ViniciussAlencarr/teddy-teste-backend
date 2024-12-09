@@ -20,17 +20,22 @@ model User {
   name     String
   urls     URL[]
 
-  createdAt  DateTime  @default(now())
-  updatedAt  DateTime  @updatedAt
-  deleted_at DateTime?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
 
   @@map("user")
 }
 
 model URL {
-  id     Int  @id @default(autoincrement())
-  user   User @relation(fields: [userId], references: [id])
-  userId Int
+  id           Int       @id @default(autoincrement())
+  user         User      @relation(fields: [userId], references: [id])
+  userId       Int
+  originalUrl  String
+  urlCode      String
+  shortenedUrl String
+  clicks       Int       @default(0)
+  lastAccess    DateTime?
 
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt

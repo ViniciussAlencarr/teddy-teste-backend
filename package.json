@@ -8,11 +8,12 @@
     "seed": "node ./build/prisma/seed/index.js"
   },
   "scripts": {
-    "test": "jest",
+    "test": "export default NODE_ENV=test && jest",
     "build": "tsc -p tsconfig.json",
-    "start": "node build/server.js",
-    "dev": "nodemon src/server.ts",
-    "lint": "npx eslint . --fix"
+    "start": "export default NODE_ENV=production && node build/server.js",
+    "dev": "export default NODE_ENV=development && nodemon src/server.ts",
+    "lint": "npx eslint . --fix",
+    "prisma": "npx prisma db push"
   },
   "keywords": [],
   "_moduleAliases": {
@@ -40,6 +41,7 @@
     "jsonwebtoken": "^9.0.2",
     "module-alias": "^2.2.3",
     "mongoose": "^8.8.4",
+    "redis": "^4.7.0",
     "validator": "^13.12.0"
   },
   "devDependencies": {

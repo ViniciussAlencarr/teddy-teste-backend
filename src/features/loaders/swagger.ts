@@ -7,8 +7,8 @@ export function swaggerLoadder() {
             await fastify.register(require('@fastify/swagger'), {
                 openapi: {
                     info: {
-                        title: 'CodeInit APIFY',
-                        description: 'Sua descricao aqui',
+                        title: 'Teddy Desafio Back-end',
+                        description: 'API Desafio Back-end',
                         version: '1.0'
                     },
                     schemes: ['http', 'https'],

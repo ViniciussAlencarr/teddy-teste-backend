@@ -8,7 +8,7 @@ import {
 
 // separando para facilitar ao usar juntamente com o Jest;
 export const buildFastify = async () => {
-  const fastify = Fastify({ logger: process.env.NODE_ENV === 'develop' });
+  const fastify = Fastify({ logger: process.env.NODE_ENV === 'development' });
 
   fastify.register(cors, {
     credentials: true,

@@ -89,6 +89,7 @@ const config: Config = {
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
     '^@libs/(.*)$': '<rootDir>/src/lib/$1',
+    '^@middlewares/(.*)$': '<rootDir>/src/features/middlewares/$1',
     '^@utils/(.*)$': '<rootDir>/src/utils/$1',
     '^@features/(.*)$': '<rootDir>/src/features/$1',
     '^@globalTypes/(.*)$': '<rootDir>/src/globalTypes/$1',

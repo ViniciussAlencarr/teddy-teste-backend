@@ -31,6 +31,7 @@
     "baseUrl": "./src",                                  /* Specify the base directory to resolve non-relative module names. */
     "paths": {
       "@libs/*": ["./lib/*"],
+      "@middlewares/*": ["./features/middlewares/*"],
       "@utils/*": ["./utils/*"],
       "@features/*": ["./features/*"],
       "@globalTypes/*": ["./types/*"],
